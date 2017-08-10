@@ -129,7 +129,7 @@ public class calculator
                (isDivisible(year, 4) && !(isDivisible(year, 100)))) ;
     }
 
-    /**
+    /** 
      * Calculate the greatest common divisor between two positive integers.
      *
      * @param n1 First integer.

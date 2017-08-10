@@ -5,7 +5,7 @@
 public class calculator
 {
     /**
-     * Find the smallest integer, given any three.
+     * Finds the smallest integer, given any three.
      * 
      * @param n1 First integer.
      * @param n2 Second integer.
@@ -48,7 +48,7 @@ public class calculator
     }
 
     /**
-     * Verify if the integer is even.
+     * Verifies if the integer is even.
      *
      * @param n The number.
      * @return Return true if the n is even or false if n is odd.
@@ -58,7 +58,7 @@ public class calculator
     }
 
     /**
-     * Verify if an integer is bigger than other.
+     * Verifies if an integer is bigger than other.
      *
      * @param n1 First integer.
      * @param n2 Second integer.
@@ -69,7 +69,7 @@ public class calculator
     }
 
     /**
-     * Verify if an positive integer is divisible by another positive integer bigger than zero.
+     * Checks if an positive integer is divisible by another positive integer bigger than zero.
      *
      * @param n1 First integer.
      * @param n2 Second integer.
@@ -80,17 +80,14 @@ public class calculator
     }
 
     /**
-     * Multiply two positive integers (greater than or equal to zero) without using the * symbol.
+     * Multiplies two positive integers (greater than or equal to zero) without using the * symbol.
      *
      * @param n1 First integer.
      * @param n2 Second integer.
      * @return Return the result of the multiplication.
      */
-    public int multiply(int n1, int n2) {
-        int i, temp = 0;        
-        
-        if ((n1 == 0 ) || (n2 == 0))
-            return 0;
+    public int multiplies(int n1, int n2) {
+        int i, temp = 0;
         
         for(i = 0; i<n1; i++)
             temp = temp + n2;
@@ -99,7 +96,7 @@ public class calculator
     }
 
     /**
-     * Calculate the integer division of two positive integers without using the / symbol. Consider the second integer n2 always bigger than zero. 
+     * Calculates the integer division of two positive integers without using the / symbol. Consider the second integer n2 always bigger than zero. 
      * Example: Dividing 6 by 3 should result 2; dividing 7 by 4 should result 1; 23 by 78 should result 0.
      *
      * @param n1 First integer (dividend).
@@ -119,18 +116,18 @@ public class calculator
     }
 
     /**
-     * Verify if a year is a leap year (bissextile).
+     * Checks if a year is a leap year (bissextile).
      *
      * @param year The year.
      * @return Return true if it is a leap year or false if not.
      */
     public boolean isLeapYear(int year) {
         return (isDivisible(year, 400) || 
-               (isDivisible(year, 4) && !(isDivisible(year, 100)))) ;
+               (isDivisible(year, 4) && !(isDivisible(year, 100))));
     }
 
     /** 
-     * Calculate the greatest common divisor between two positive integers.
+     * Calculates the greatest common divisor between two positive integers.
      *
      * @param n1 First integer.
      * @param n2 Second integer.
@@ -197,29 +194,30 @@ public class calculator
     }
 
     /**
-     * Verifica se um número maior que zero é primo.
+     * Checks if an integer greater than zero is prime.
      *
-     * @param n O número.
-     * @return Retorna true se o número for primo ou false caso contrário.
+     * @param n The number.
+     * @return Returns true is the integer is prime or false if not.
      */
-    /*public boolean isPrime  (int n) {
-        int i;
+    public boolean isPrime  (int n) {
+        int i, test = 0;
         
         for(i = 2; i <= n/2; i++)
         {
-            
+            if(n % i == 0)
+                test = test + 1;
         }
         
-        return false;
-    }*/
+        return test == 0;
+    }
 
     /**
-     * Verifica se um número maior que zero é composto.
+     * Checks if an integer greater than zero is composite.
      *
-     * @param n O número.
-     * @return Retorna true se o número for composto ou false caso contrário.
+     * @param n The number.
+     * @return Returns true if the integer is composite or false if not.
      */
-    /*public boolean isComposite(int n) {
+    public boolean isComposite(int n) {
         return isPrime(n) == false;
-    }*/
+    }
 }

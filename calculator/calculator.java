@@ -136,28 +136,36 @@ public class calculator
      * @param n2 Second integer.
      * @return Return the greatest common divisor between the two numbers.
      */
-    /*public int calculateGCD(int n1, int n2) {
-        int remainder = 0, result = 0;
+    public int calculateGCD(int n1, int n2) {
+        int m1, m2, result = 0, remainder, divider, temp;
         
-        if(isBigger(n1, n2) == true)
+        if(n1>n2)
         {
-            //remainder = n1 % n2;
-            
-            if(n1 % n2 == 0) //if(remainder == 0)
-                return n2;
-                
-            remainder = n1 % n2;                
-            result = n2 / remainder;
-            
-            while(temp != 0)
-                result = n2 / (n1 % n2);
+            m1 = n1;
+            m2 = n2;
         } 
         else 
         {
+            m1 = n2;
+            m2 = n1;
+        }
+        
+        remainder = m1%m2;
+        temp = m2;
+        
+        if(remainder == 0)
+            result = temp;
+        
+        while(remainder != 0)
+        {
+            divider = remainder;
+            remainder = temp % divider;
+            temp = divider;
+            result = divider;
         }
         
         return result;
-    }*/
+    }
 
     /**
      * Calculates the sum of all dividers of a positive integer.
@@ -185,8 +193,7 @@ public class calculator
      * @return Returns true if both integers are friends and false if not.
      */
     public boolean areFriends(int n1, int n2) {
-        
-        return false;
+        return ((dividersSum(n1) - n1 == n2) && (dividersSum(n2) - n2 == n1));
     }
 
     /**
@@ -195,10 +202,16 @@ public class calculator
      * @param n O número.
      * @return Retorna true se o número for primo ou false caso contrário.
      */
-    public boolean ehPrimo(int n) {
-
+    /*public boolean isPrime  (int n) {
+        int i;
+        
+        for(i = 2; i <= n/2; i++)
+        {
+            
+        }
+        
         return false;
-    }
+    }*/
 
     /**
      * Verifica se um número maior que zero é composto.
@@ -206,7 +219,7 @@ public class calculator
      * @param n O número.
      * @return Retorna true se o número for composto ou false caso contrário.
      */
-    public boolean ehComposto(int n) {
-        return false;
-    }
+    /*public boolean isComposite(int n) {
+        return isPrime(n) == false;
+    }*/
 }

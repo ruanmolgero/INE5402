@@ -312,4 +312,48 @@ public class calculator
         return prime;
     }
     */
+   
+    /*
+    public int calculateGCD(int n1, int n2) {
+        int remainder, greater, smaller;
+        if (n1 > n2) {
+            greater = n1;
+            smaller = n2;
+        } else {
+            greater = n2;
+            smaller = n1;
+        }
+        do {
+            remainder = greater % smaller;
+            greater = smaller;
+            smaller = remainder;
+        } while (remainder != 0);
+    return greater;
+    }
+    */
+   
+    /*
+    public int calculateGCDTeacher(int n1, int n2) {
+        int remainder, greater, smaller, gcd;
+        if (n1 > n2) {
+            greater = n1;
+            smaller = n2;
+        } else {
+            greater = n2;
+            smaller = n1;
+        }
+        
+        remainder = greater % smaller;
+        
+        while(remainder!=0) {
+            greater = smaller;
+            smaller = remainder;
+            remainder = greater % smaller;
+        }
+        
+        gcd = smaller;
+        
+    return gcd;
+    }
+    */
 }

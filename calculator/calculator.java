@@ -89,6 +89,8 @@ public class calculator
     public int multiplies(int n1, int n2) {
         int i, temp = 0;
         
+        //test for the biggest and smallest number between n1 and n2 # See teacher answers #
+        
         for(i = 0; i<n1; i++)
             temp = temp + n2;
         
@@ -103,18 +105,18 @@ public class calculator
      * @param n2 Second integer (divider).
      * @return Return the result of the division (n1 / n2).
      */
-    public int divide(int n1, int n2) {
-        int result = 0, temp = n1;
+    public int divides(int n1, int n2) {
+        int result = 0;
         
-        while (!((temp - n2) < 0))
+        while (!((n1 - n2) < 0))            //easier to understand if it is (n1 >= n2) # See teacher answers #
         {
-            temp = temp - n2;
+            n1 = n1 - n2;
             result = result + 1;
         }
         
         return result;
     }
-
+    
     /**
      * Checks if a year is a leap year (bissextile).
      *
@@ -140,9 +142,7 @@ public class calculator
         {
             m1 = n1;
             m2 = n2;
-        } 
-        else 
-        {
+        } else {
             m1 = n2;
             m2 = n1;
         }
@@ -150,7 +150,7 @@ public class calculator
         remainder = m1%m2;
         temp = m2;
         
-        if(remainder == 0)
+        //if(remainder == 0)                  //this program can be improved only by removing this if the same test is done on the while loop
             result = temp;
         
         while(remainder != 0)
@@ -171,11 +171,11 @@ public class calculator
      * @return Returns the sum.
      */
     public int dividersSum(int n) {
-        int i, result = 0;
+        int result = n + 1, m = n/2;
         
-        for(i = 1; i <= n; i++)
+        for(int i = 2; i <= m; i++)     //m is used in order to avoid doing useless calculations inside the for loop # See teacher answers #
         {
-            if(n % i == 0)
+            if(n % i == 0)              //could be isDivisible(n,i) # See teacher answers #
                 result = result + i;
         }
         
@@ -202,13 +202,28 @@ public class calculator
     public boolean isPrime  (int n) {
         int i, test = 0;
         
-        for(i = 2; i <= n/2; i++)
+        for(i = 2; i <= n/2; i++)       //bad implementation, too much iteractions if n is too high # See teacher answers #
         {
             if(n % i == 0)
                 test = test + 1;
         }
         
         return test == 0;
+        
+            
+        //int i = 2, test = 0, m = n/2;
+        
+        //while((test == 0) || (i<=m))
+        //{
+        //    if(n % i == 0)
+        //    {
+        //        test = test + 1;
+        //        i = i + 1;
+        //    }
+        //}
+        
+        //return test == 0;
+        
     }
 
     /**
@@ -220,4 +235,81 @@ public class calculator
     public boolean isComposite(int n) {
         return isPrime(n) == false;
     }
+    
+    /* TEACHER ANSWERS */
+    
+    /*
+    public int multipliesTeacher(int n1, int n2) 
+    {
+        int result = 0, numberOfIteractions, numberToAdd;
+        
+        if(n1<n2)
+        {
+            numberOfIteractions = n1;
+            numberToAdd = n2;
+        } else {
+            numberOfIteractions = n2;
+            numberToAdd = n1;
+        }
+        
+        for(int i = 1; i<=numberOfIteractions; i++)
+            result = result + numberToAdd;
+        
+        return result;
+    }   
+    */
+    
+    /*
+    public int dividesTeacher(int n1, int n2) 
+    {
+        int result = 0;
+        
+        while (n1 >= n2)
+        {
+            n1 = n1 - n2;
+            result = result + 1;
+        }
+        
+        return result;
+    } 
+    */
+   
+    /*
+    public int dividersSumTeacher(int n) 
+    {
+        int result = n + 1, limit = n/2;
+        
+        for(int i = 2; i <= limit; i++)
+            if(isDivisible(n,i))
+                result = result + i;
+        
+        return result;
+    }
+    */
+   
+    /*
+    public boolean isPrimeTeacher(int n)
+    {
+        boolean prime;
+       
+        if(n <= 3)
+            prime = true;
+        else
+            if (n % 2 == 0)
+                prime = false;
+            else {
+                prime = true;
+                int limit = n/2;
+                int i = 3;
+                
+                while(prime && i <= limit)
+                    if(n % i == 0)
+                        prime = false;
+                    else
+                        i = i + 2;
+            }
+        
+        return prime;
+    }
+    */
 }

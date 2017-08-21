@@ -16,4 +16,5 @@ comment7.params=anotherBucket
 comment7.target=void\ receiveContent(Bucket)
 comment8.params=anotherBucket
 comment8.target=void\ transferContent(Bucket)
+comment8.text=\n\ \ \ \ public\ void\ transferContent(Bucket\ anotherBucket)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ if(anotherBucket.getActualVolume()\ <\ anotherBucket.capacity\ &&\ this.getActualVolume()\ \!\=\ 0)\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ while(anotherBucket.actualVolume\ <\ anotherBucket.capacity\ &&\ this.getActualVolume()\ >\ 0)\n\ \ \ \ \ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anotherBucket.actualVolume++;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.actualVolume--;\n\ \ \ \ \ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ }\n\ \ \ \ }\n
 numComments=9

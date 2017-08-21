@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Bucket
+comment1.params=capacity
+comment1.target=Bucket(int)
+comment2.params=
+comment2.target=void\ fillBucket()
+comment3.params=
+comment3.target=void\ emptyBucket()
+comment4.params=
+comment4.target=boolean\ isFull()
+comment5.params=
+comment5.target=boolean\ isEmpty()
+comment6.params=
+comment6.target=int\ getActualVolume()
+comment7.params=anotherBucket
+comment7.target=void\ receiveContent(Bucket)
+comment8.params=anotherBucket
+comment8.target=void\ transferContent(Bucket)
+numComments=9

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=investigator
+comment1.params=n
+comment1.target=int\ findFirstPrime(int)
+comment2.params=n\ number
+comment2.target=int\ findPrimeN(int,\ int)
+numComments=3

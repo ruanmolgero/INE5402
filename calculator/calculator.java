@@ -3,7 +3,7 @@
  * diferent several math calculations.
  */
 public class calculator
-{
+{    
     /**
      * Finds the smallest integer, given any three.
      * 
@@ -287,7 +287,7 @@ public class calculator
     }
     */
    
-    /*
+    
     public boolean isPrimeTeacher(int n)
     {
         boolean prime;
@@ -311,7 +311,6 @@ public class calculator
         
         return prime;
     }
-    */
    
     /*
     public int calculateGCD(int n1, int n2) {

@@ -19,6 +19,9 @@ comment13.text=\n\ Checks\ if\ an\ integer\ greater\ than\ zero\ is\ prime.\n\n\
 comment14.params=n
 comment14.target=boolean\ isComposite(int)
 comment14.text=\n\ Checks\ if\ an\ integer\ greater\ than\ zero\ is\ composite.\n\n\ @param\ n\ The\ number.\n\ @return\ Returns\ true\ if\ the\ integer\ is\ composite\ or\ false\ if\ not.\n
+comment15.params=n
+comment15.target=boolean\ isPrimeTeacher(int)
+comment15.text=\n\ \ \ \ public\ int\ dividersSumTeacher(int\ n)\ \n\ \ \ \ {\n\ \ \ \ \ \ \ \ int\ result\ \=\ n\ +\ 1,\ limit\ \=\ n/2;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ for(int\ i\ \=\ 2;\ i\ <\=\ limit;\ i++)\n\ \ \ \ \ \ \ \ \ \ \ \ if(isDivisible(n,i))\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ \=\ result\ +\ i;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ return\ result;\n\ \ \ \ }\n
 comment2.params=n1\ n2\ n3
 comment2.target=float\ calculateMean(int,\ int,\ int)
 comment2.text=\n\ Calculates\ the\ arithmetic\ mean\ of\ any\ three\ given\ integers.\n\n\ @param\ n1\ First\ integer.\n\ @param\ n2\ Second\ integer.\n\ @param\ n3\ Third\ integer.\n\ @return\ Return\ the\ float\ value\ of\ the\ mean.\n
@@ -43,4 +46,4 @@ comment8.text=\n\ Calculates\ the\ integer\ division\ of\ two\ positive\ integer
 comment9.params=year
 comment9.target=boolean\ isLeapYear(int)
 comment9.text=\n\ Checks\ if\ a\ year\ is\ a\ leap\ year\ (bissextile).\n\n\ @param\ year\ The\ year.\n\ @return\ Return\ true\ if\ it\ is\ a\ leap\ year\ or\ false\ if\ not.\n
-numComments=15
+numComments=16

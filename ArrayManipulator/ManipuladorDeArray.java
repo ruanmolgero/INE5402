@@ -8,13 +8,13 @@ public class ManipuladorDeArray
      */
     public int returnSum(int[] numbers) {
         int result = 0;
-        
+
         for(int i = 0; i < numbers.length; i++)
             result += numbers[i];
-        
+
         //for(int iteractions : numbers)
         //    result += iteractions;  
-            
+
         return result;
     }
 
@@ -26,13 +26,17 @@ public class ManipuladorDeArray
      */
     public int[] retorneDePosicoesImpares(int[] numbers) {
         int[] result = new int[numbers.length / 2];
-        
+
+
         for(int i = 0; i < numbers.length; i++)
-        {   
             if(i % 2 != 0)
                 result[i/2] = numbers[i];
-        }
         
+        /*
+        for(int i = 1; i < numbers.length; i++)
+            result[i/2] = numbers[i];
+        */
+
         return result;
     }
 
@@ -45,12 +49,12 @@ public class ManipuladorDeArray
      */
     public int[] retornePrimeiroEUltimo(int[] numbers) {
         int[] result;
-        
+
         if(numbers.length < 2)
             result = new int[0];
         else
             result = new int[] { numbers[0], numbers[numbers.length - 1] };
-        
+
         return result;
     }
 
@@ -63,13 +67,11 @@ public class ManipuladorDeArray
      */
     public int retorneQuantasOcorrencias(int[] numbers, int number) {
         int result = 0;
-        
+
         for(int i = 0; i < numbers.length; i++)
-        {
             if(numbers[i] == number)
                 result++;
-        }
-            
+
         return result;
     }
 
@@ -81,14 +83,18 @@ public class ManipuladorDeArray
      */
     public int retorneMaiorNumero(int[] numbers) {
         int result = numbers[0];
-        
+
         for(int iteraction : numbers)
             if(iteraction > result)
                 result = iteraction;
         
         return result;
-    }
-
+        
+        /*
+        return numbers[retornePosicaoDoMaiorNumero(numbers)];
+        */
+    } 
+    
     /**
      * Obtém a posição do maior número no array.
      *
@@ -98,24 +104,35 @@ public class ManipuladorDeArray
      */
     public int retornePosicaoDoMaiorNumero(int[] numbers) {
         int result;
-        
+
         if(numbers.length == 0)
             result = -1;
         else
         {
             result = 0;
             int temp = numbers[0];
-            
-            for(int i = 0; i < numbers.length; i++)
-            {
+
+            for(int i = 1; i < numbers.length; i++)
                 if(numbers[i] > temp)
                 {
                     temp = numbers[i];
                     result = i;
                 }
-            }    
         }
         
+        /*
+        if(numbers.length == 0)
+            result = -1;
+        else
+        {
+            result = 0;
+
+            for(int i = 1; i < numbers.length; i++)
+                if(numbers[i] > numbers[result])
+                    result = i;
+        }
+        */
+
         return result;
     }
 
@@ -128,11 +145,11 @@ public class ManipuladorDeArray
      */
     public int retorneQuantidadeAcimaDeLimite(int[] numbers, int limite) {
         int result = 0;
-        
+
         for(int iteraction : numbers)
             if (iteraction > limite)
                 result++;
-        
+
         return result;
     }
 
@@ -144,10 +161,10 @@ public class ManipuladorDeArray
      */
     public float retorneMedia(int[] numbers) {
         float media = 0;
-        
+
         for(int iteraction : numbers)
             media += iteraction;
-        
+
         return media / numbers.length;
     }
 
@@ -162,11 +179,11 @@ public class ManipuladorDeArray
      */
     public int retorneQuantosNoIntervalo(int[] numbers, int inferiorBound, int superiorBound) {
         int result = 0;
-        
+
         for(int iteraction : numbers)
             if(iteraction >= inferiorBound && iteraction <= superiorBound)
                 result++;
-        
+
         return result;
     }
 
@@ -191,10 +208,10 @@ public class ManipuladorDeArray
      */
     public int[] retorneMultiplicadoPorFator(int[] numbers, int scalar) {
         int[] result = new int[numbers.length];
-        
+
         for(int i = 0; i < numbers.length; i++)
             result[i] = scalar*numbers[i];
-        
+
         return result;
     }
 
@@ -208,22 +225,22 @@ public class ManipuladorDeArray
      */
     public int[] copieNPrimeiros(int[] numbers, int n) {
         int[] result;
-        
+
         if(n > numbers.length)
         {
             result = new int[numbers.length];
-            
+
             for(int i = 0; i < numbers.length; i++)
                 result[i] = numbers[i];
         }   
         else
         {
             result = new int[n];
-            
+
             for(int i = 0; i < n; i++)
                 result[i] = numbers[i];
         }
-        
+
         return result;
     }
 
@@ -248,14 +265,14 @@ public class ManipuladorDeArray
     public int[] retorneNumerosNoIntervalo(int[] numbers, int inferiorBound, int superiorBound) {
         int[] result = new int[retorneQuantosNoIntervalo(numbers, inferiorBound, superiorBound)];
         int j = 0;
-        
+
         for(int i = 0; i < numbers.length; i++)
             if(numbers[i] >= inferiorBound && numbers[i] <= superiorBound)
             {
                 result[j] = numbers[i];
                 j++;
             }
-            
+
         return result;
     }
 
@@ -268,12 +285,12 @@ public class ManipuladorDeArray
      */
     public int[] unaArrays(int[] a1, int[] a2) {
         int[] result = new int[a1.length + a2.length];
-        
+
         for(int i = 0; i < a1.length; i++)
             result[i] = a1[i];
         for(int i = 0; i < a2.length; i++)
             result[a1.length + i] = a2[i];
-        
+
         return result;
     }
 
@@ -286,21 +303,21 @@ public class ManipuladorDeArray
     public int[] retornePares(int[] numbers) {
         int[] result;
         int temp = 0;
-        
+
         for(int i = 0; i < numbers.length; i++)
             if(numbers[i] % 2 == 0)
                 temp++;
-                
+
         result = new int[temp];
         temp = 0;
-        
+
         for(int i = 0; i < numbers.length; i++)
             if(numbers[i] % 2 == 0)
             {
                 result[temp] = numbers[i];
                 temp++;
             }
-        
+
         return result;
     }
 
@@ -313,16 +330,15 @@ public class ManipuladorDeArray
      */
     public int[] dupliqueArray(int[] numbers) {
         int[] result = new int[2*numbers.length];
-        
+
         for(int i = 0; i <numbers.length; i++)
         {
             result[2*i] = numbers[i];
             result[2*i + 1] = numbers[i];
         }
-        
+
         return result;
     }
-
 
     /**
      * Verifica se o array possui pelo menos um número par.
@@ -333,7 +349,7 @@ public class ManipuladorDeArray
     public boolean possuiNumeroPar(int[] numbers) {
         boolean result = false;
         int i = 0;
-        
+
         while(i != numbers.length && result == false)
         {
             if(numbers[i] % 2 == 0)
@@ -354,14 +370,14 @@ public class ManipuladorDeArray
      */
     public int retornePrimeiraPosicaoDeNumero(int[] numbers, int n) {
         int result = -1, i = 0;
-        
+
         while(i < numbers.length && result == -1)
         {
             if(numbers[i] == n)
                 result = i;
             i++;
         }
-        
+
         return result;
     }
 
@@ -375,14 +391,14 @@ public class ManipuladorDeArray
     public int[] retornePosicoesDeNumero(int[] numbers, int n) {
         int[] result = new int[retorneQuantasOcorrencias(numbers, n)];
         int j = 0;
-        
+
         for(int i = 0; i < numbers.length; i++)
             if(numbers[i] == n)
             {
                 result[j] = i;
                 j++;
             }
-        
+
         return result;
     }
 
@@ -394,7 +410,7 @@ public class ManipuladorDeArray
      */
     public boolean semRepeticoes(int[] numbers) {
         boolean result = true;
-        
+
         if(numbers.length >= 2)
             for(int i = 0; i < numbers.length; i++)
                 for(int j = i+1; j < numbers.length; j++)
@@ -404,11 +420,10 @@ public class ManipuladorDeArray
                         j = numbers.length;
                         i = numbers.length;
                     }
-            
+
         return result;
     }
 
-    
     /**
      * Obtém um array sem ocorrências de um determinado número. Exemplo: se o array for [8,2,3,2] e o número for 2 então retorna [8,3].
      *
@@ -419,15 +434,112 @@ public class ManipuladorDeArray
     public int[] retorneSemOcorrencias(int[] numbers, int n) {
         int[] result = new int[numbers.length - retorneQuantasOcorrencias(numbers, n)];
         int j = 0;
-        
+
         for(int i = 0; i < numbers.length; i++)
             if(numbers[i] != n)
             {
                 result[j] = numbers[i];
                 j++;
             }
-            
+
         return result;
     }
 
+    public void alteraArray(int[] array, int n1, int n2)
+    {
+        for(int i = 0; i < array.length; i++)
+            if(array[i] == n1)
+                array[i] = n2;
+    }
+
+    public void alteraPrimeiroNumeroArray(int[] array, int n1, int n2)
+    {
+        int i = 0, test = 0;
+
+        while(test == 0 && i < array.length)
+        {
+            if(array[i] == n1)
+            {
+                array[i] = n2;
+                test = 1;
+            }
+            i++;
+        }
+    }
+
+    public void alteraUltimoNumeroArray(int[] array, int n1, int n2)
+    {
+        int i = array.length - 1, test = 0;
+
+        while(test == 0 && i >=0)
+        {
+            if(array[i] == n1)
+            {
+                array[i] = n2;
+                test = 1;
+            }
+            i--;
+        }
+    }
+
+    public int[] retorneInvertido (int[] numeros)
+    {
+        int[] resultado = new int[numeros.length];
+
+        for(int i = 0; i < numeros.length; i++)
+            resultado[numeros.length - 1 - i] = numeros[i];
+
+        return resultado;
+    }
+
+    public int[] retorneSomas(int[] numeros)
+    {
+        int[] resultado = new int[]{0, 0};
+
+        for(int i = 0; i < numeros.length; i++)
+        {
+            if(i % 2 == 0)
+                resultado[0] += numeros[i];
+            else
+                resultado[1] += numeros[i];
+        }
+
+        return resultado;
+    }
+
+    public int[] retornaPosicoes(int[] numeros, int[] posicoes) {
+        int[] resultado = new int[posicoes.length];
+
+        for(int i = 0; i < posicoes.length; i++)
+            resultado[i] = numeros[posicoes[i]];
+
+        return resultado;
+    }
+
+    public int[] retornaParte(int[] numeros, int posicao, int qtd) {
+        int[] resultado;
+        int j = 0;
+
+        if( posicao > numeros.length)
+            resultado = new int[0];
+        else if(posicao + qtd > numeros.length) 
+        {   
+            resultado = new int[qtd];
+            for(int i = posicao; i < numeros.length; i++)
+            {
+                resultado[j] = numeros[i];
+                j++;
+            }
+        }
+        else                                                //caso posicao+qtd < array.length
+        {
+            resultado = new int[qtd];
+            for(int i = posicao; i < posicao + qtd; i++)
+            {
+                resultado[j] = numeros[i];
+                j++;
+            }
+        }
+        return resultado;
+    }
 }

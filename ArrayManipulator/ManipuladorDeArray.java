@@ -166,6 +166,10 @@ public class ManipuladorDeArray
             media += iteraction;
 
         return media / numbers.length;
+        
+        /*
+        return 1.0f*returnSum(numbers) / numbers.length;
+        */
     }
 
     /**
@@ -271,9 +275,48 @@ public class ManipuladorDeArray
             {
                 result[j] = numbers[i];
                 j++;
+                
+                //result[j++] = numbers[i];
             }
 
         return result;
+        
+        /*
+        qtd = retorneQuantosNoIntervalo(numbers, inferiorBound, superiorBound);
+        int[] result = new int[qtd];
+        int j = 0;
+        
+        for(int i = 0; i < qtd; i++)
+        {
+            while(numbers[j] < inferiorBound || numbers[j] > superiorBound)
+                j++;
+            result[i] = numbers[j];
+            j++;
+        }       
+        
+        return result;
+        */
+        
+        /*
+        int[] result;
+        int[] resultTemp = new int[numbers.length];
+        int qtd = 0;
+        
+        for(int number : numbers)
+            if(number >= inferiorBound && number <= superiorBound)
+                resultTemp[qtd++] = number;
+                
+        if(qtd == numbers.length)
+            result = resultTemp;
+        else
+        {
+        result = new int[qtd];
+        for(int i = 0; i < qtd, i++)
+            result[i] = resultTemp[i];
+        }
+        
+        return result;
+        */
     }
 
     /**

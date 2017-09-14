@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=sorter
+comment1.params=
+comment1.target=sorter()
+comment2.params=testArray
+comment2.target=int[]\ bubbleSort(int[])
+comment3.params=testArray
+comment3.target=int[]\ selectionSort(int[])
+numComments=4

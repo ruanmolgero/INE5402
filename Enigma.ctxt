@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Enigma
+comment1.params=string\ ct
+comment1.target=java.lang.String\ codeString(java.lang.String,\ CodificationTable)
+comment2.params=string\ ct
+comment2.target=java.lang.String\ decodString(java.lang.String,\ CodificationTable)
+numComments=3

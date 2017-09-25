@@ -1,17 +1,20 @@
 #BlueJ class context
 comment0.target=CodificationTable
-comment1.params=
-comment1.target=CodificationTable()
-comment2.params=originalChar\ codedChar
-comment2.target=CodificationTable(char[],\ char[])
-comment3.params=desiredChar
-comment3.target=int\ getOriginalCharPosition(char)
-comment4.params=desiredChar
-comment4.target=int\ getCodedCharPosition(char)
-comment5.params=position
-comment5.target=char\ getOriginalCharValue(int)
+comment1.params=desiredChar\ desiredArray
+comment1.target=int\ getCharPosition(char,\ char[])
+comment2.params=
+comment2.target=CodificationTable()
+comment3.params=originalChar\ codedChar
+comment3.target=CodificationTable(char[],\ char[])
+comment4.params=character
+comment4.target=int\ getOriginalCharPosition(char)
+comment4.text=\n\ \ \ \ public\ int\ getOriginalCharPositionOld(char\ desiredChar)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ int\ position\ \=\ -1;\n\ \ \ \ \ \ \ \ int\ i\ \=\ 0;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ while(position\ \=\=\ -1\ &&\ i\ <\ originalChar.length)\n\ \ \ \ \ \ \ \ \ \ \ \ if(originalChar[i]\ \=\=\ desiredChar)\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ \=\ i;\n\ \ \ \ \ \ \ \ \ \ \ \ else\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ return\ position;\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ public\ int\ getCodedCharPositionOld(char\ desiredChar)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ int\ position\ \=\ -1;\n\ \ \ \ \ \ \ \ int\ i\ \=\ 0;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ while(position\ \=\=\ -1\ &&\ i\ <\ codedChar.length)\n\ \ \ \ \ \ \ \ \ \ \ \ if(codedChar[i]\ \=\=\ desiredChar)\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ \=\ i;\n\ \ \ \ \ \ \ \ \ \ \ \ else\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ return\ position;\n\ \ \ \ }\n
+comment5.params=character
+comment5.target=int\ getCodedCharPosition(char)
 comment6.params=position
-comment6.target=char\ getCodedCharValue(int)
-comment7.params=
-comment7.target=boolean\ testCodification()
-numComments=8
+comment6.target=char\ getOriginalCharValue(int)
+comment7.params=position
+comment7.target=char\ getCodedCharValue(int)
+comment8.params=
+comment8.target=boolean\ testCodification()
+numComments=9

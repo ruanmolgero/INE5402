@@ -1,9 +1,15 @@
 #BlueJ class context
 comment0.target=sorter
-comment1.params=
-comment1.target=sorter()
-comment2.params=testArray
-comment2.target=int[]\ bubbleSort(int[])
-comment3.params=testArray
-comment3.target=int[]\ selectionSort(int[])
-numComments=4
+comment1.params=array
+comment1.target=int[]\ copy(int[])
+comment2.params=
+comment2.target=sorter()
+comment3.params=array
+comment3.target=void\ bubbleSort(int[])
+comment4.params=array
+comment4.target=int[]\ returnBubbleSort(int[])
+comment5.params=array
+comment5.target=void\ selectionSort(int[])
+comment6.params=array
+comment6.target=int[]\ returnSelectionSort(int[])
+numComments=7

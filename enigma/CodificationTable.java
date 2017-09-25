@@ -2,6 +2,20 @@ public class CodificationTable
 {
     private char[] originalChar;
     private char[] codedChar;
+    
+    private int getCharPosition(char desiredChar, char[] desiredArray)
+    {
+        int position = -1;
+        int i = 0;
+        
+        while(position == -1 && i < desiredArray.length)
+            if(desiredArray[i] == desiredChar)
+                position = i;
+            else
+                i++;
+        
+        return position;
+    }
 
     public CodificationTable()
     {
@@ -14,8 +28,9 @@ public class CodificationTable
         this.originalChar = originalChar;
         this.codedChar = codedChar;
     }
-        
-    public int getOriginalCharPosition(char desiredChar)
+    
+    /*
+    public int getOriginalCharPositionOld(char desiredChar)
     {
         int position = -1;
         int i = 0;
@@ -29,7 +44,7 @@ public class CodificationTable
         return position;
     }
     
-    public int getCodedCharPosition(char desiredChar)
+    public int getCodedCharPositionOld(char desiredChar)
     {
         int position = -1;
         int i = 0;
@@ -41,6 +56,17 @@ public class CodificationTable
                 i++;
                 
         return position;
+    }
+    */
+    
+    public int getOriginalCharPosition(char character)
+    {
+        return getCharPosition(character, originalChar);
+    }
+    
+    public int getCodedCharPosition(char character)
+    {
+        return getCharPosition(character, codedChar);
     }
     
     public char getOriginalCharValue(int position)

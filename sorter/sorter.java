@@ -2,52 +2,78 @@ public class sorter
 {
     //private int[] testArray = new int[]{8, 3, 34, 12, 9};
     //private int[] testArray = new int[]{1, 999999999, 333, 4444, 22, 666666, 77777777, 55555, 88888888};
-    
+
+    private int[] copy(int[] array)
+    {
+        int[] result = new int[array.length];
+
+        for(int i = 0; i < array.length; i++)
+            result[i] = array[i];
+
+        return result;
+    }
+
     public sorter()
     {
     }
 
-    public int[] bubbleSort(int[] testArray)
+    public void bubbleSort(int[] array)
     {
-        int iteraction = testArray.length - 1;
-        
+        int iteraction = array.length - 1;
+        int temp;
+
         for(int j = iteraction; j > 0; j--)
         {
             for(int i = 0; i < iteraction; i++)
             {
-                if(testArray[i] > testArray[i+1])
+                if(array[i] > array[i+1])
                 {
-                    int temp = testArray[i];
-                    testArray[i] = testArray[i+1];
-                    testArray[i+1] = temp;
+                    temp = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = temp;
                 }
             }
             iteraction--;
         }
-        
-        return testArray;
     }
-    
-    public int[] selectionSort(int[] testArray)
+
+    public int[] returnBubbleSort(int[] array)
     {
-        for(int j = 0; j < testArray.length - 1; j++)
+        int[] result = copy(array);
+
+        bubbleSort(result);
+
+        return result;
+    }
+
+    public void selectionSort(int[] array)
+    {
+        int biggest;
+        int pos;
+        
+        for(int j = 0; j < array.length - 1; j++)
         {
-            int biggest= testArray[0];
-            int pos = 0;
-            
-            for(int i = 0; i < testArray.length - 1 - j; i++)
-                if(testArray[i+1] > biggest)
+            biggest = array[0];
+            pos = 0;
+
+            for(int i = 0; i < array.length - 1 - j; i++)
+                if(array[i+1] > biggest)
                 {
-                    biggest = testArray[i+1];
+                    biggest = array[i+1];
                     pos = i + 1;
                 }
-            
-            testArray[pos] = testArray[testArray.length - 1 - j];
-            testArray[testArray.length - 1 - j] = biggest;
+
+            array[pos] = array[array.length - 1 - j];
+            array[array.length - 1 - j] = biggest;
         }
-                     
-        return testArray;
     }
-    
-        
+
+    public int[] returnSelectionSort(int[] array)
+    {
+        int[] result = copy(array);
+
+        selectionSort(result);
+
+        return result;
+    }
 }

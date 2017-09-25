@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=RandomArrayGenerator
+comment1.params=
+comment1.target=RandomArrayGenerator()
+comment2.params=arraySize\ inferiorBound\ superiorBound
+comment2.target=int[]\ createArray(int,\ int,\ int)
+numComments=3

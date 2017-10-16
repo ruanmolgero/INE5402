@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Ship
+comment1.params=maxCapacity\ maxWeight
+comment1.target=Ship(int,\ float)
+comment2.params=
+comment2.target=int\ getMaxCapacity()
+comment3.params=
+comment3.target=float\ getMaxWeight()
+comment4.params=
+comment4.target=int\ getActualCarrying()
+comment5.params=
+comment5.target=float\ getActualWeight()
+comment6.params=ID\ weight
+comment6.target=boolean\ loadContainer(java.lang.String,\ float)
+comment7.params=ID
+comment7.target=Container\ unloadContainer(java.lang.String)
+comment8.params=ID
+comment8.target=boolean\ isCarryingContainer(java.lang.String)
+comment9.params=weightBoundary
+comment9.target=java.lang.String[]\ containersUnderBoundary(float)
+numComments=10

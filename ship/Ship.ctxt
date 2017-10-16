@@ -2,6 +2,8 @@
 comment0.target=Ship
 comment1.params=maxCapacity\ maxWeight
 comment1.target=Ship(int,\ float)
+comment10.params=
+comment10.target=int\ findAvailabePosition()
 comment2.params=
 comment2.target=int\ getMaxCapacity()
 comment3.params=
@@ -18,4 +20,4 @@ comment8.params=ID
 comment8.target=boolean\ isCarryingContainer(java.lang.String)
 comment9.params=weightBoundary
 comment9.target=java.lang.String[]\ containersUnderBoundary(float)
-numComments=10
+numComments=11

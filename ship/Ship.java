@@ -85,33 +85,30 @@ public class Ship
 
     public String[] containersUnderBoundary(float weightBoundary)
     {
-        String[] containersUnder = null;
+        String[] containersUnder;
+        String[] containersUnderTemp = new String[actualCarrying];
         int counter = 0;
-        int i = 0;       
-
-        for(i = 0; i < containers.length; i++)
+        int position = 0;       
+        
+        for(int i = 0; i < this.actualCarrying; i++)
         {
-            if(containers[i] == null)
-                i = i;
-            else if(containers[i].getWeight() < weightBoundary)
-                counter++;
+            while(containers[i] == null)
+                position++;
+                
+            if(containers[i].getWeight() < weightBoundary)
+                containersUnderTemp[counter++] = containers[i].getID();
+            
+            position++;
         }
-
-        if(counter > 0)
+        
+        if(counter == this.actualCarrying)
+            containersUnder = containersUnderTemp;
+        else
         {
             containersUnder = new String[counter];
-            i = 0;
-            counter = 0;        
-
-            while(i < containersUnder.length)
-            {
-                if(containers[i] == null)
-                    i = i;
-                else if(containers[i].getWeight() < weightBoundary)
-                    containersUnder[counter++] = containers[i].getID();
-
-                i++;
-            }
+            
+            for(int i =0; i < counter; i++)
+                containersUnder[i] = containersUnderTemp[i];
         }
 
         return containersUnder;

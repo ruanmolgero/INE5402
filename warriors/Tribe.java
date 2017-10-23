@@ -1,33 +1,86 @@
-
-/**
- * Write a description of class Tribe here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Tribe
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Tribe
+    /*
+     *              NOTES
+     * 1 - Implement using 2 arrays instead of only one, one array for the alive warriors, and one for the dead warriors.
      */
-    public Tribe()
+    
+    String name;
+    int maxWarriorHP;
+    int existingAlive;
+    int existingDead;
+    Warrior[] warriors;
+    
+    public Tribe(String name, int maxWarriors, int maxWarriorHP)
     {
-        // initialise instance variables
-        x = 0;
+        this.name = name;
+        this.maxWarriorHP = maxWarriorHP;
+        this.existingAlive = 0;
+        this.existingDead = 0;
+        this.warriors = new Warrior[maxWarriors];
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public String getName()
     {
-        // put your code here
-        return x + y;
+        return this.name;
+    }
+    
+    public int getAlive()
+    {
+        return existingAlive;
+    }
+    
+    public int getDead()
+    {
+        return existingDead;
+    }
+    
+    public int getExistingWarriors()
+    {
+        return existingAlive + existingDead;
+    }
+    
+    public int getMaxWarriors()
+    {
+        return warriors.length;
+    }
+    
+    public int addWarrior(String ID)
+    {
+        int ableToAdd;
+        final int OK_ADDED = 0;
+        final int NOK_EXISTS = 1;
+        final int NOK_TRIBE_FULL = 2;
+        
+        if(this.getExistingWarriors() == this.getMaxWarriors())
+            ableToAdd = NOK_TRIBE_FULL;
+        else if(this.findWarriorPosition(ID))
+            ableToAdd = NOK_EXISTS;
+        else
+            
+        return ableToAdd;
+    }
+    
+    private int findWarriorPosition(String ID)
+    {
+        int warriorPosition = -1;
+        int foundWarriors = 0;
+        int existingWarriors = this.getExistingWarriors();
+        int i = 0;
+        
+        while(warriorPosition == -1 && i < existingWarriors)
+        {
+            while(warriors[i] == null)
+                i++;
+                
+            foundWarriors++;
+                
+            if(warriors[i].getID() == ID)
+                warriorPosition = i;
+            else
+                i++;
+        }
+        
+        return warriorPosition;
     }
 }

@@ -1,9 +1,9 @@
 public class Container
 {
-    private String ID;
-    private float weight;
+    String ID;
+    int weight;
 
-    public Container(String ID, float weight)
+    public Container(String ID, int weight)
     {
         this.ID = ID;
         this.weight = weight;
@@ -14,8 +14,8 @@ public class Container
         return this.ID;
     }
     
-    public float getWeight()
+    public int getWeight()
     {
-        return this.weight*1.0f;
+        return this.weight;
     }
 }

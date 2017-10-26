@@ -1,10 +1,5 @@
 public class Tribe
 {
-    /*
-     *              NOTES
-     * 1 - Implement using 2 arrays instead of only one, one array for the alive warriors, and one for the dead warriors.
-     */
-
     String name;
     int tribeMaxHP;
     int aliveNumber;
@@ -169,42 +164,42 @@ public class Tribe
 
         return ableToHurt;
     }
-    
+
     public Warrior[] aliveWarriorsArray()
     {
         Warrior[] aliveWarriorsArray = new Warrior[aliveNumber];
         int foundWarriors = 0;
         int i = 0;
-        
+
         while(foundWarriors < aliveNumber)
         {
             if(aliveWarriors[i] == null)
                 i++;
-            
+
+            aliveWarriorsArray[foundWarriors] = aliveWarriors[i];
             foundWarriors++;
-            aliveWarriorsArray[i] = aliveWarriors[i];
             i++;
         }
-        
+
         return aliveWarriorsArray;
     }
-    
+
     public Warrior[] deadWarriorsArray()
     {
         Warrior[] deadWarriorsArray = new Warrior[aliveNumber];
         int foundWarriors = 0;
         int i = 0;
-        
+
         while(foundWarriors < deadNumber)
         {
             if(deadWarriors[i] == null)
                 i++;
-            
+
+            deadWarriorsArray[foundWarriors] = deadWarriors[i];
             foundWarriors++;
-            deadWarriorsArray[i] = deadWarriors[i];
             i++;
         }
-        
+
         return deadWarriorsArray;
     }
 

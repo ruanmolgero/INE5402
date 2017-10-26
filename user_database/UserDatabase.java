@@ -19,21 +19,21 @@ public class UserDatabase
     {
         return this.registeredUsers;
     }
-    
+
     public float getActualOccupationRate()
     {
-        return this.registeredUsers / users.length * 1.00f;
+        return (this.registeredUsers*1.0f/users.length);
     }
 
     public boolean addUser(String userName, String userLogin, String userPassword)
     {
-        boolean ableToAdd = this.findUser(userName) != -1;
+        boolean ableToAdd = this.findUser(userLogin) == -1;
 
         if(ableToAdd)
         {
             if(this.getRegisteredNumber() == users.length)
                 this.increaseSizeByMinimum();
-                
+
             int availablePosition = this.findAvailablePosition();
             users[availablePosition] = new User(userName, userLogin, userPassword);
             this.registeredUsers++;
@@ -51,13 +51,39 @@ public class UserDatabase
         {
             users[userPosition] = null;
             this.registeredUsers--;
-            
-            if(getActualOccupationRate() < this.minimumOccupationRate && users.length > minimumCapacity)
+
+            if(this.getActualOccupationRate() < this.minimumOccupationRate && users.length > minimumCapacity)
                 this.decreaseSizeByMinimum();
         }
 
         return ableToRemove;
     }
+
+    public User returnUser(String userLogin)
+    {
+        int position = findUser(userLogin);
+        User user;
+
+        if(position == -1)
+            user = null;
+        else
+            user = new User(users[position].getName(), users[position].getLogin(), users[position].getPassword());
+
+        return user;
+    }
+
+    public User returnUser(String userLogin, String userPassword)
+    {
+        int position = findUser(userLogin);
+        User user;
+
+        if(position == -1 || users[position].getPassword() != userPassword)
+            user = null;
+        else
+            user = new User(users[position].getName(), users[position].getLogin(), users[position].getPassword());
+
+        return user;
+    }   
 
     private int findUser(String userLogin)
     {
@@ -84,7 +110,7 @@ public class UserDatabase
     {
         int position = 0;
 
-        while(users[position] == null)
+        while(users[position] != null)
             position++;
 
         return position;
@@ -97,11 +123,25 @@ public class UserDatabase
         users = new User[usersTemp.length + capacityIncrement];
 
         while(i < usersTemp.length)
+        {
             users[i] = usersTemp[i];
+            i++;
+        }
     }
-    
+
     private void decreaseSizeByMinimum()
     {
-        
+        int i = 0;
+        int j = 0;
+        User[] usersTemp = users;
+        users = new User[usersTemp.length - capacityIncrement];
+
+        while(i < usersTemp.length)
+        {
+            if(usersTemp[i] != null)
+                users[j++] = usersTemp[i];
+
+            i++;
+        }
     }
 }

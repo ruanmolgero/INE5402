@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=User
+comment1.params=name\ login\ password
+comment1.target=User(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=java.lang.String\ getLogin()
+comment4.params=
+comment4.target=java.lang.String\ getPassword()
+comment5.params=password
+comment5.target=void\ setPassword(java.lang.String)
+comment6.params=
+comment6.target=User\ cloneUser()
+numComments=7

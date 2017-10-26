@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=UserDatabase
+comment1.params=minimumCapacity\ capacityIncrement\ minimumOccupationRate
+comment1.target=UserDatabase(int,\ int,\ float)
+comment2.params=
+comment2.target=int\ getRegisteredNumber()
+comment3.params=
+comment3.target=float\ getActualOccupationRate()
+comment4.params=userName\ userLogin\ userPassword
+comment4.target=boolean\ addUser(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment5.params=userLogin
+comment5.target=boolean\ removeUser(java.lang.String)
+comment6.params=userLogin
+comment6.target=int\ findUser(java.lang.String)
+comment7.params=
+comment7.target=int\ findAvailablePosition()
+comment8.params=
+comment8.target=void\ increaseSizeByMinimum()
+comment9.params=
+comment9.target=void\ decreaseSizeByMinimum()
+numComments=10

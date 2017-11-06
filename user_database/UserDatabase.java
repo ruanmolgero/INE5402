@@ -59,6 +59,22 @@ public class UserDatabase
         return ableToRemove;
     }
 
+    public boolean changePassword(String userLogin, String oldPassword, String newPassword)
+    {
+        boolean ableToChange;
+        int position = findUser(userLogin);
+
+        if(position == -1 || users[position].getPassword() != oldPassword)
+            ableToChange = false;
+        else
+        {
+            users[position].setPassword(newPassword);
+            ableToChange = true;
+        }
+
+        return ableToChange;
+    }
+
     public User returnUser(String userLogin)
     {
         int position = findUser(userLogin);
@@ -118,30 +134,30 @@ public class UserDatabase
 
     private void increaseSizeByMinimum()
     {
-        int i = 0;
         User[] usersTemp = users;
         users = new User[usersTemp.length + capacityIncrement];
 
-        while(i < usersTemp.length)
-        {
+        for(int i = 0; i < usersTemp.length; i++)
             users[i] = usersTemp[i];
-            i++;
-        }
     }
 
     private void decreaseSizeByMinimum()
     {
         int i = 0;
-        int j = 0;
         User[] usersTemp = users;
-        users = new User[usersTemp.length - capacityIncrement];
-
-        while(i < usersTemp.length)
+        if(registeredUsers > minimumCapacity)
+            users = new User[registeredUsers];
+        else
+            users = new User[minimumCapacity];
+            
+        for(int k = 0; k < registeredUsers; k++)
         {
-            if(usersTemp[i] != null)
-                users[j++] = usersTemp[i];
-
+            while(usersTemp[i] == null)
+                i++;
+                
+            users[k] = usersTemp[i];
             i++;
         }
     }
 }
+

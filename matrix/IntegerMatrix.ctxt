@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=IntegerMatrix
+comment1.params=numberOfRows\ numberOfColumns
+comment1.target=IntegerMatrix(int,\ int)
+comment2.params=row\ column\ value
+comment2.target=void\ setValue(int,\ int,\ int)
+comment3.params=row\ column
+comment3.target=int\ getValue(int,\ int)
+comment4.params=
+comment4.target=int\ getNumberOfRows()
+comment5.params=
+comment5.target=int\ getNumberOfColumns()
+comment6.params=rowNumber
+comment6.target=int\ returnRowSum(int)
+comment7.params=columnNumber
+comment7.target=int\ returnColumnSum(int)
+comment8.params=
+comment8.target=int[]\ returnAllRowsSum()
+numComments=9

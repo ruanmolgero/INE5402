@@ -2,6 +2,8 @@
 comment0.target=IntegerMatrix
 comment1.params=numberOfRows\ numberOfColumns
 comment1.target=IntegerMatrix(int,\ int)
+comment10.params=scalar
+comment10.target=void\ multiplyByScalar(int)
 comment2.params=row\ column\ value
 comment2.target=void\ setValue(int,\ int,\ int)
 comment3.params=row\ column
@@ -16,4 +18,6 @@ comment7.params=columnNumber
 comment7.target=int\ returnColumnSum(int)
 comment8.params=
 comment8.target=int[]\ returnAllRowsSum()
-numComments=9
+comment9.params=
+comment9.target=int\ returnAllNumbersSum()
+numComments=11

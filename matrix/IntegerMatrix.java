@@ -68,6 +68,27 @@ public class IntegerMatrix
     
     public int returnAllNumbersSum()
     {
-        //To-Do
+        int sumResult = 0;
+        
+        for(int i = 0; i < integers.length; i++)
+            for(int j = 0; j < integers[i].length; j++)
+                sumResult += integers[i][j];
+        
+        return sumResult;
     }
+    
+    public void multiplyByScalar(int scalar)
+    {
+        for(int i = 0; i < integers.length; i++)
+            for(int j = 0; j < integers[i].length; j++)
+                integers[i][j] = scalar*integers[i][j];
+    }
+    
+    /*
+    public int[][] returnMatrixCopy()
+    {
+        int[][] resultMatrix = new integers;
+        return resultMatrix;
+    }
+    */
 }

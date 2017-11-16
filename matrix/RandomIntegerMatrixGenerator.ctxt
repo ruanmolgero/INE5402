@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=RandomIntegerMatrixGenerator
+comment1.params=
+comment1.target=RandomIntegerMatrixGenerator()
+comment2.params=numberOfRows\ numberOfColumns\ number
+comment2.target=IntegerMatrix\ createMatrix(int,\ int,\ int)
+numComments=3
